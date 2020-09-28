@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.helloworld.listview.ListViewActivity;
+
 /**
  * @author Prongs
  */
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button im;
 
+    private Button lv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         rb = findViewById(R.id.btn_radiobtn);
         cb = findViewById(R.id.btn_checkbox);
         im = findViewById(R.id.btn_imageview);
+        lv = findViewById(R.id.btn_listview);
         setListeners();
     }
 
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         rb.setOnClickListener(onClick);
         cb.setOnClickListener(onClick);
         im.setOnClickListener(onClick);
+        lv.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -74,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_imageview:
                     intent = new Intent(MainActivity.this, ImageViewActivity.class);
+                    break;
+                case R.id.btn_listview:
+                    intent = new Intent(MainActivity.this, ListViewActivity.class);
                     break;
                 default:
                     break;
