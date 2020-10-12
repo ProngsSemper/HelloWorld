@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.helloworld.gridview.GridViewActivity;
 import com.example.helloworld.listview.ListViewActivity;
 
 /**
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button lv;
 
+    private Button gv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         cb = findViewById(R.id.btn_checkbox);
         im = findViewById(R.id.btn_imageview);
         lv = findViewById(R.id.btn_listview);
+        gv = findViewById(R.id.btn_gridview);
         setListeners();
     }
 
@@ -55,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         cb.setOnClickListener(onClick);
         im.setOnClickListener(onClick);
         lv.setOnClickListener(onClick);
+        gv.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -83,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_listview:
                     intent = new Intent(MainActivity.this, ListViewActivity.class);
+                    break;
+                case R.id.btn_gridview:
+                    intent = new Intent(MainActivity.this, GridViewActivity.class);
                     break;
                 default:
                     break;
