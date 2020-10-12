@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.helloworld.gridview.GridViewActivity;
 import com.example.helloworld.listview.ListViewActivity;
+import com.example.helloworld.recyclerview.RecyclerViewActivity;
 
 /**
  * @author Prongs
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button gv;
 
+    private Button rv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         im = findViewById(R.id.btn_imageview);
         lv = findViewById(R.id.btn_listview);
         gv = findViewById(R.id.btn_gridview);
+        rv = findViewById(R.id.btn_recyclerview);
         setListeners();
     }
 
@@ -60,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         im.setOnClickListener(onClick);
         lv.setOnClickListener(onClick);
         gv.setOnClickListener(onClick);
+        rv.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -91,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_gridview:
                     intent = new Intent(MainActivity.this, GridViewActivity.class);
+                    break;
+                case R.id.btn_recyclerview:
+                    intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                     break;
                 default:
                     break;
